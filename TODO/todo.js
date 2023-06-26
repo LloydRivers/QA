@@ -1,38 +1,41 @@
+// Comments taken from Jquery documentation
 import { generateUniqueId } from "./generateUniqueId.js";
-// Get the required elements from the DOM
-const todoList = document.querySelector(".todo-list");
 
 // Function to render the todos on the page
 const renderTodos = () => {
-  todoList.innerHTML = "";
+  const todoList = $(".todo-list");
+
+  todoList.empty();
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
   todos.forEach((todo) => {
-    const todoItem = document.createElement("div");
-    todoItem.classList.add("todo-item");
+    const todoItem = $("<div>").addClass("todo-item").attr("data-id", todo.id);
 
-    const todoText = document.createElement("span");
-    todoText.textContent = todo.text;
-    todoItem.appendChild(todoText);
+    const todoText = $("<span>").text(todo.text);
+    todoItem.append(todoText);
 
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.classList.add("btn", "btn-danger", "btn-sm");
-    deleteButton.addEventListener("click", () => {
-      deleteTodoById(todo.id);
-      renderTodos();
-    });
-    todoItem.appendChild(deleteButton);
+    const deleteButton = $("<button>")
+      .text("Delete")
+      .addClass("btn btn-danger btn-sm delete-button")
+      .attr("data-id", todo.id)
+      .click((event) => {
+        const id = $(event.target).data("id");
+        console.log("forEach", id);
+        deleteTodoById(id);
+        renderTodos();
+      });
 
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    editButton.classList.add("btn", "btn-primary", "btn-sm");
-    editButton.addEventListener("click", () => {
-      editTodoById(todo.id);
-    });
-    todoItem.appendChild(editButton);
+    todoItem.append(deleteButton);
 
-    todoList.appendChild(todoItem);
+    const editButton = $("<button>")
+      .text("Edit")
+      .addClass("btn btn-primary btn-sm")
+      .click(() => {
+        editTodoById(todo.id);
+      });
+    todoItem.append(editButton);
+
+    todoList.append(todoItem);
   });
 };
 
@@ -48,15 +51,39 @@ const addTodo = (text) => {
 
   todos.push(newTodo);
   localStorage.setItem("todos", JSON.stringify(todos));
+
+  const todoItem = $("<div>")
+    .addClass("todo-item")
+    .attr("data-id", newTodo.id)
+    .css("display", "none"); // Hide the new todo item initially using inline style
+
+  const todoText = $("<span>").text(newTodo.text);
+  todoItem.append(todoText);
+
+  $(".todo-list").append(todoItem);
+
+  // Fade in the new todo item
+  todoItem.fadeIn();
 };
 
-// Function to delete a todo by ID
 const deleteTodoById = (id) => {
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
   const updatedTodos = todos.filter((todo) => todo.id !== id);
   localStorage.setItem("todos", JSON.stringify(updatedTodos));
+
+  const todoItem = $(`.todo-item[data-id="${id}"]`);
+  todoItem.fadeOut(() => {
+    todoItem.remove();
+  });
 };
+
+// Event delegation using jQuery
+$(".todo-list").on("click", ".delete-button", function () {
+  const id = $(this).data("id");
+  console.log("delegation ", id);
+  deleteTodoById(id);
+});
 
 // Function to edit a todo by ID
 const editTodoById = (id) => {
@@ -76,20 +103,29 @@ const editTodoById = (id) => {
   }
 };
 
-// ...
+// Event delegation using jQuery
+$(".todo-list").on("click", ".edit-button", function () {
+  const id = $(this).data("id");
+  editTodoById(id);
+});
 
-// Function to clear all todos
 const clearAllTodos = () => {
   if (confirm("Are you sure you want to delete all todos?")) {
-    localStorage.removeItem("todos");
-    renderTodos();
+    // Get all todo items
+    const todoItems = $(".todo-item");
+
+    // Apply fadeOut animation to each todo item
+    todoItems.fadeOut(() => {
+      // Remove todo items from the DOM
+      todoItems.remove();
+
+      // Clear the todos from localStorage
+      localStorage.removeItem("todos");
+    });
   }
 };
 
 // Event listener for the "Clear All" button
-const clearAllButton = document.getElementById("clearAll");
-clearAllButton.addEventListener("click", clearAllTodos);
-
-// ...
+$("#clearAll").click(clearAllTodos);
 
 export { addTodo, editTodoById, deleteTodoById, renderTodos };

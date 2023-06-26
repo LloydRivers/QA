@@ -1,19 +1,21 @@
 import { renderTodos, addTodo } from "./todo.js";
 
-const input = document.getElementById("task-input");
-const addButton = document.getElementById("addTodo");
+$(document).ready(() => {
+  const input = $("#task-input");
+  const addButton = $("#addTodo");
 
-// Event listener for the add button
-addButton.addEventListener("click", (event) => {
-  event.preventDefault();
-  const todoText = input.value.trim();
+  // Event listener for the add button
+  addButton.click((event) => {
+    event.preventDefault();
+    const todoText = input.val().trim();
 
-  if (todoText !== "") {
-    addTodo(todoText);
-    renderTodos();
-    input.value = "";
-  }
+    if (todoText !== "") {
+      addTodo(todoText);
+      renderTodos();
+      input.val("");
+    }
+  });
+
+  // Initial rendering of todos on page load
+  renderTodos();
 });
-
-// Initial rendering of todos on page load
-renderTodos();
