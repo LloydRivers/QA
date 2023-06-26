@@ -22,17 +22,17 @@ const renderTodos = () => {
         const id = $(event.target).data("id");
         console.log("forEach", id);
         deleteTodoById(id);
-        renderTodos();
       });
 
     todoItem.append(deleteButton);
 
     const editButton = $("<button>")
       .text("Edit")
-      .addClass("btn btn-primary btn-sm")
+      .addClass("btn btn-primary btn-sm edit-button")
       .click(() => {
         editTodoById(todo.id);
       });
+
     todoItem.append(editButton);
 
     todoList.append(todoItem);
@@ -52,17 +52,7 @@ const addTodo = (text) => {
   todos.push(newTodo);
   localStorage.setItem("todos", JSON.stringify(todos));
 
-  const todoItem = $("<div>")
-    .addClass("todo-item")
-    .attr("data-id", newTodo.id)
-    .css("display", "none"); // Hide the new todo item initially using inline style
-
-  const todoText = $("<span>").text(newTodo.text);
-  todoItem.append(todoText);
-
-  $(".todo-list").append(todoItem);
-
-  // Fade in the new todo item
+  const todoItem = $(`.todo-item[data-id="${newTodo.id}"]`);
   todoItem.fadeIn();
 };
 
@@ -111,21 +101,16 @@ $(".todo-list").on("click", ".edit-button", function () {
 
 const clearAllTodos = () => {
   if (confirm("Are you sure you want to delete all todos?")) {
-    // Get all todo items
     const todoItems = $(".todo-item");
 
-    // Apply fadeOut animation to each todo item
     todoItems.fadeOut(() => {
-      // Remove todo items from the DOM
       todoItems.remove();
 
-      // Clear the todos from localStorage
       localStorage.removeItem("todos");
     });
   }
 };
 
-// Event listener for the "Clear All" button
 $("#clearAll").click(clearAllTodos);
 
 export { addTodo, editTodoById, deleteTodoById, renderTodos };
