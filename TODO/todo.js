@@ -4,8 +4,8 @@ import { generateUniqueId } from "./generateUniqueId.js";
 // Function to render the todos on the page
 const renderTodos = () => {
   const todoList = $(".todo-list");
-
   todoList.empty();
+
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
   todos.forEach((todo) => {
@@ -20,7 +20,6 @@ const renderTodos = () => {
       .attr("data-id", todo.id)
       .click((event) => {
         const id = $(event.target).data("id");
-        console.log("forEach", id);
         deleteTodoById(id);
       });
 
@@ -41,6 +40,7 @@ const renderTodos = () => {
 
 // Function to add a new todo
 const addTodo = (text) => {
+  const todoList = $(".todo-list");
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
   const newTodo = {
@@ -51,9 +51,33 @@ const addTodo = (text) => {
 
   todos.push(newTodo);
   localStorage.setItem("todos", JSON.stringify(todos));
+  // DONE
+  const todoItem = $("<div>").addClass("todo-item").attr("data-id", newTodo.id);
 
-  const todoItem = $(`.todo-item[data-id="${newTodo.id}"]`);
-  todoItem.fadeIn();
+  const todoText = $("<span>").text(text);
+  todoItem.append(todoText);
+
+  const deleteButton = $("<button>")
+    .text("Delete")
+    .addClass("btn btn-danger btn-sm delete-button")
+    .attr("data-id", newTodo.id)
+    .click((event) => {
+      const id = $(event.target).data("id");
+      deleteTodoById(id);
+    });
+
+  todoItem.append(deleteButton);
+
+  const editButton = $("<button>")
+    .text("Edit")
+    .addClass("btn btn-primary btn-sm edit-button")
+    .click(() => {
+      editTodoById(newTodo.id);
+    });
+
+  todoItem.append(editButton);
+
+  todoList.append(todoItem).hide().fadeIn(1000);
 };
 
 const deleteTodoById = (id) => {

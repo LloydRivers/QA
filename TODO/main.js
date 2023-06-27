@@ -11,7 +11,7 @@ $(document).ready(() => {
 
     if (todoText !== "") {
       addTodo(todoText);
-      renderTodos();
+      // renderTodos();
       input.val("");
     }
   });
