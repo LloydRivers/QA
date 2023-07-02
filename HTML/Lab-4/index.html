@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <title>List and Table Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      /* List Styles */
+      .list-container {
+        margin: 20px;
+      }
+
+      .list-container ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      .list-container ol {
+        list-style-type: decimal;
+        padding-left: 20px;
+      }
+
+      .list-container dl {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+      }
+
+      .list-container dt {
+        font-weight: bold;
+      }
+
+      /* Table Styles */
+      .table-container {
+        margin: 20px;
+      }
+
+      .table-container table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      .table-container th,
+      .table-container td {
+        border: 1px solid #ccc;
+        padding: 8px;
+      }
+
+      .table-container th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      .table-container tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .table-container colgroup {
+        background-color: #e6e6e6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>List and Table Example</h1>
+
+    <div class="list-container">
+      <h2>Lists</h2>
+      <ul>
+        <li>Unordered List Item 1</li>
+        <li>Unordered List Item 2</li>
+        <li>Unordered List Item 3</li>
+      </ul>
+
+      <ol>
+        <li>Ordered List Item 1</li>
+        <li>Ordered List Item 2</li>
+        <li>Ordered List Item 3</li>
+      </ol>
+
+      <dl>
+        <dt>Definition Term 1</dt>
+        <dd>Definition Description 1</dd>
+        <dt>Definition Term 2</dt>
+        <dd>Definition Description 2</dd>
+        <dt>Definition Term 3</dt>
+        <dd>Definition Description 3</dd>
+      </dl>
+    </div>
+
+    <div class="table-container">
+      <h2>Table</h2>
+      <table>
+        <colgroup>
+          <col style="background-color: #e6e6e6" />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+          </tr>
+          <tr>
+            <td>Data 3</td>
+            <td>Data 4</td>
+          </tr>
+          <tr>
+            <td>Data 5</td>
+            <td>Data 6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

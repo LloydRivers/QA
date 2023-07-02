@@ -1,0 +1,90 @@
+* {
+  color: fuchsia;
+}
+
+p em {
+  color: midnightblue;
+}
+
+body > footer {
+  color: purple;
+}
+
+h1 + p {
+  color: teal;
+}
+
+h1 ~ p {
+  color: yellow;
+}
+
+p.interactive {
+  color: navy;
+}
+
+p.interactive:hover {
+  color: lime;
+}
+
+#special {
+  color: red;
+}
+
+article,
+header,
+nav,
+ul,
+li,
+footer {
+  margin: 1em;
+  padding: 1em;
+  outline: 4px dashed black;
+}
+
+a {
+  color: blue;
+}
+
+nav > ul {
+  list-style: none;
+}
+
+li:first-child {
+  background-color: #0094ff;
+}
+
+li:last-child {
+  background-color: #0094ff;
+}
+
+li:nth-child(3) {
+  background-color: #0094ff;
+}
+
+li:nth-child(odd) {
+  background-color: #b6ff00;
+}
+
+li:nth-child(even) {
+  background-color: #1d1bc6;
+}
+
+li:not(:first-child) {
+  background-color: #ff0000;
+}
+
+p:first-of-type {
+  background-color: #00ff00;
+}
+
+p:last-of-type {
+  background-color: #0000ff;
+}
+
+label[for="name"] {
+  background-color: aquamarine;
+}
+
+input[type="email"] {
+  background-color: hotpink;
+}
