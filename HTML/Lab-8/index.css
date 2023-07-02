@@ -1,0 +1,29 @@
+/* Set the background image for the div element */
+div {
+  background-image: url("https://images.unsplash.com/photo-1548371836-9f0b75a62d8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+}
+
+/* Add a background image and format the element with the id "hasBackground" */
+#hasBackground {
+  background-image: url("https://images.unsplash.com/photo-1506102383123-c8ef1e872756?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+/* Style the paragraph inside the div with the id "hasBackground" */
+#hasBackground p {
+  color: #333;
+  font-size: 18px;
+}
+
+/* Style the footer element */
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
