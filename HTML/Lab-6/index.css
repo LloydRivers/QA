@@ -1,35 +1,44 @@
+/* Apply fuchsia color to all elements */
 * {
   color: fuchsia;
 }
 
+/* Apply midnightblue color to emphasized text within paragraphs */
 p em {
   color: midnightblue;
 }
 
+/* Apply purple color to footer directly under body */
 body > footer {
   color: purple;
 }
 
+/* Apply teal color to paragraphs immediately following h1 */
 h1 + p {
   color: teal;
 }
 
+/* Apply yellow color to paragraphs following h1 */
 h1 ~ p {
   color: yellow;
 }
 
+/* Apply navy color to paragraphs with the "interactive" class */
 p.interactive {
   color: navy;
 }
 
+/* Apply lime color to paragraphs with the "interactive" class when hovered */
 p.interactive:hover {
   color: lime;
 }
 
+/* Apply red color to the element with id "special" */
 #special {
   color: red;
 }
 
+/* Apply margin, padding, and outline to article, header, nav, ul, li, and footer elements */
 article,
 header,
 nav,
@@ -41,50 +50,62 @@ footer {
   outline: 4px dashed black;
 }
 
+/* Apply blue color to anchor links */
 a {
   color: blue;
 }
 
+/* Remove list-style from unordered lists that are direct children of nav */
 nav > ul {
   list-style: none;
 }
 
+/* Apply background color to first child list items */
 li:first-child {
   background-color: #0094ff;
 }
 
+/* Apply background color to last child list items */
 li:last-child {
   background-color: #0094ff;
 }
 
+/* Apply background color to third child list items */
 li:nth-child(3) {
   background-color: #0094ff;
 }
 
+/* Apply background color to odd-numbered list items */
 li:nth-child(odd) {
   background-color: #b6ff00;
 }
 
+/* Apply background color to even-numbered list items */
 li:nth-child(even) {
   background-color: #1d1bc6;
 }
 
+/* Apply background color to all list items except the first child */
 li:not(:first-child) {
   background-color: #ff0000;
 }
 
+/* Apply background color to the first paragraph */
 p:first-of-type {
   background-color: #00ff00;
 }
 
+/* Apply background color to the last paragraph */
 p:last-of-type {
   background-color: #0000ff;
 }
 
+/* Apply background color to label with the "for" attribute of "name" */
 label[for="name"] {
   background-color: aquamarine;
 }
 
+/* Apply background color to input with the "type" attribute of "email" */
 input[type="email"] {
   background-color: hotpink;
 }
