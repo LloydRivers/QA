@@ -3,3 +3,13 @@
     display: flex;
     justify-content: space-between;
 }
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.nav ul li {
+    padding: 0px 10px;
+}
