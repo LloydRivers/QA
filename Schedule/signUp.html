@@ -7,57 +7,70 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav class="nav">
+    <div class="content">
+        <nav class="navbar">
             <ul class="nav">
-                <li>Logo</li>
+                <li>QA</li>
                 <li><a href="index.html">Home</a></li>
                 <li>Schedule</li>
                 <li><a href="signUp.html">Signup</a></li>
             </ul>
         </nav>
-        <img src="" >
-    </header>
-    <form class="signupForm">
-        <div>
-            <label for="title">Title * </label>
-            <select name="title">
-                <option>Mr</option>
-                <option>Mrs</option>
-                <option>Ms</option>
-                <option>Miss</option>
-            </select>
+        <div class="box" >
+            <img
+            src="https://images.unsplash.com/photo-1627133805103-ce2d34ccdd37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt=""
+          />
+
         </div>
-        <div>
-            <label for="firstName">First Name * </label>
-            <input type="text" name="firstName"/>
+        <div class="box">
+
+            <form class="signupForm">
+                <div>
+                    <label for="title">Title * </label>
+                    <select name="title">
+                        <option>Mr</option>
+                        <option>Mrs</option>
+                        <option>Ms</option>
+                        <option>Miss</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="firstName">First Name * </label>
+                    <input type="text" name="firstName"/>
+                </div>
+                <div>
+                    <label for="lastName">Last Name * </label>
+                    <input type="text" name="lastName" />
+                </div>
+                <div>
+                    <label for="email">Email * </label>
+                    <input type="email" name="email" />
+                </div>
+                <div>
+                    <label for="dob">Date of Birth </label>
+                    <input type="date" name="dob" />
+                </div>
+                <div>
+                    <label for="tel">Phone Number </label>
+                    <input type="tel" name="tel" />
+                </div>
+                <div>
+                    <div>
+                        <input type="radio" value="male" name="male" />
+                        <label for="male">Male</label>
+                    </div>
+                    <div>
+                        <input type="radio" value="female" name="female" />
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <input type="submit" />
+            </form>
         </div>
-        <div>
-            <label for="lastName">Last Name * </label>
-            <input type="text" name="lastName" />
+            <footer class="footer">
+                <p>&copy; Copyright QA Cinemas 2023</p>
+            </footer>
         </div>
-        <div>
-            <label for="email">Email * </label>
-            <input type="email" name="email" />
-        </div>
-        <div>
-            <label for="dob">Date of Birth </label>
-            <input type="date" name="dob" />
-        </div>
-        <div>
-            <label for="tel">Phone Number </label>
-            <input type="tel" name="tel" />
-        </div>
-        <div>
-            <div>
-                <input type="radio" value="male" name="male" />
-                <label for="male">Male</label>
-            </div>
-            <div>
-                <input type="radio" value="female" name="female" />
-                <label for="female">Female</label>
-            </div>
-        </div>
-    </form>
-</body>
-</html>
+    </body>
+    </html>
