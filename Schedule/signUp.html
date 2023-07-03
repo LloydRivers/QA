@@ -7,13 +7,57 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="nav">
-        <ul>
-            <li>Logo</li>
-            <li><a href="index.html">Home</a></li>
-            <li>Schedule</li>
-            <li><a href="signUp.html">Signup</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="nav">
+            <ul class="nav">
+                <li>Logo</li>
+                <li><a href="index.html">Home</a></li>
+                <li>Schedule</li>
+                <li><a href="signUp.html">Signup</a></li>
+            </ul>
+        </nav>
+        <img src="" >
+    </header>
+    <form class="signupForm">
+        <div>
+            <label for="title">Title * </label>
+            <select name="title">
+                <option>Mr</option>
+                <option>Mrs</option>
+                <option>Ms</option>
+                <option>Miss</option>
+            </select>
+        </div>
+        <div>
+            <label for="firstName">First Name * </label>
+            <input type="text" name="firstName"/>
+        </div>
+        <div>
+            <label for="lastName">Last Name * </label>
+            <input type="text" name="lastName" />
+        </div>
+        <div>
+            <label for="email">Email * </label>
+            <input type="email" name="email" />
+        </div>
+        <div>
+            <label for="dob">Date of Birth </label>
+            <input type="date" name="dob" />
+        </div>
+        <div>
+            <label for="tel">Phone Number </label>
+            <input type="tel" name="tel" />
+        </div>
+        <div>
+            <div>
+                <input type="radio" value="male" name="male" />
+                <label for="male">Male</label>
+            </div>
+            <div>
+                <input type="radio" value="female" name="female" />
+                <label for="female">Female</label>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
