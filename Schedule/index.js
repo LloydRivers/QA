@@ -1,9 +1,16 @@
-const listItems = document.querySelectorAll(".nav li a");
+import { displayErrorMessage, removeErrorMessage } from "./helpers.js";
+const emailInput = document.getElementById("email");
+const emailContainer = document.getElementById("errorContainer");
 
-listItems.forEach((item) => {
-  item.addEventListener("click", (event) => {
-    listItems.forEach((item) => item.classList.remove("active"));
+const validateEmail = () => {
+  const emailRegex = /^\S+@\S+\.\S+$/;
+  const email = emailInput.value.trim();
 
-    item.classList.add("active");
-  });
-});
+  if (emailRegex.test(email)) {
+    removeErrorMessage(emailContainer);
+  } else {
+    displayErrorMessage(emailContainer);
+  }
+};
+
+emailInput.addEventListener("input", validateEmail);
