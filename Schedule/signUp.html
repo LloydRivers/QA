@@ -37,13 +37,17 @@
                         <option>Miss</option>
                     </select>
                 </div>
-                <div>
+                <div id="firstNameSection">
                     <label for="firstName">First Name * </label>
-                    <input type="text" name="firstName" required />
+                    <input type="text" 
+                    id= "firstName" name="firstName" required onblur="validateFirstName()"/>
                 </div>
-                <div>
+                <div id="lastNameSection">
                     <label for="lastName">Last Name * </label>
-                    <input type="text" name="lastName" required/>
+                    <input type="text" name="lastName" 
+                    id="lastName"
+                    onBlur="validateLastName()"
+                    required />
                 </div>
                 <div>
                     <label for="email">Email * </label>
@@ -75,4 +79,29 @@
             </footer>
         </div>
     </body>
+
+    <script>
+        nameRegex = /[A-Za-z]{1,15}/
+        
+        const validateFirstName = () => {
+            const nameField = document.getElementById("firstName")
+            if (!nameRegex.test(nameField.value)) {
+                const firstNameField = document.getElementById("firstNameSection")
+                const errorMsg = document.createElement("p")
+                errorMsg.appendChild(document.createTextNode("The First Name entered is either too short or too long"))
+                firstNameField.appendChild(errorMsg)
+            }
+        }
+
+        const validateLastName = () => {
+            const nameField = document.getElementById("lastName")
+            if (!nameRegex.test(nameField.value)) {
+                const lastNameField = document.getElementById("lastNameSection")
+                const errorMsg = document.createElement("p")
+                errorMsg.appendChild(document.createTextNode("The Last Name entered is either too short or too long"))
+                lastNameField.appendChild(errorMsg)
+            }
+        }
+            
+    </script>
     </html>
