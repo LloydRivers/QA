@@ -81,13 +81,21 @@
     </body>
 
     <script>
-        nameRegex = /[A-Za-z]{1,15}/
+        nameRegex = /^.{1,15}$/
         
         const validateFirstName = () => {
             const nameField = document.getElementById("firstName")
+            const firstNameErr = document.getElementById("firstNameErr")
+            const firstNameField = document.getElementById("firstNameSection")
+            if (firstNameErr) {
+                firstNameField.removeChild(firstNameErr)
+                nameField.classList.toggle("error")
+            }
             if (!nameRegex.test(nameField.value)) {
-                const firstNameField = document.getElementById("firstNameSection")
                 const errorMsg = document.createElement("p")
+                nameField.classList.toggle("error")
+                errorMsg.classList.add("errorMsg")
+                errorMsg.setAttribute("id", "firstNameErr")
                 errorMsg.appendChild(document.createTextNode("The First Name entered is either too short or too long"))
                 firstNameField.appendChild(errorMsg)
             }
@@ -95,9 +103,16 @@
 
         const validateLastName = () => {
             const nameField = document.getElementById("lastName")
+            const lastNameField = document.getElementById("lastNameSection")
+            const lastNameErr = document.getElementById("lastNameErr")
+            if (lastNameErr) {
+                lastNameSection.removeChild(lastNameErr)
+                nameField.classList.toggle("error")
+            }
             if (!nameRegex.test(nameField.value)) {
-                const lastNameField = document.getElementById("lastNameSection")
                 const errorMsg = document.createElement("p")
+                errorMsg.classList.add("errorMsg")
+                nameField.classList.toggle("error")
                 errorMsg.appendChild(document.createTextNode("The Last Name entered is either too short or too long"))
                 lastNameField.appendChild(errorMsg)
             }
