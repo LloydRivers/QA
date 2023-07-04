@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=nav, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>
+        Sign Up
+    </title>
 </head>
 <body>
     <div class="content">
@@ -28,7 +30,7 @@
             <form class="signupForm">
                 <div>
                     <label for="title">Title * </label>
-                    <select name="title">
+                    <select name="title" required>
                         <option>Mr</option>
                         <option>Mrs</option>
                         <option>Ms</option>
@@ -37,15 +39,15 @@
                 </div>
                 <div>
                     <label for="firstName">First Name * </label>
-                    <input type="text" name="firstName"/>
+                    <input type="text" name="firstName" required />
                 </div>
                 <div>
                     <label for="lastName">Last Name * </label>
-                    <input type="text" name="lastName" />
+                    <input type="text" name="lastName" required/>
                 </div>
                 <div>
                     <label for="email">Email * </label>
-                    <input type="email" name="email" />
+                    <input type="email" name="email" required/>
                 </div>
                 <div>
                     <label for="dob">Date of Birth </label>
@@ -57,15 +59,15 @@
                 </div>
                 <div>
                     <div>
-                        <input type="radio" value="male" name="male" />
+                        <input type="radio" value="male" name="gender" />
                         <label for="male">Male</label>
                     </div>
                     <div>
-                        <input type="radio" value="female" name="female" />
+                        <input type="radio" value="female" name="gender" />
                         <label for="female">Female</label>
                     </div>
                 </div>
-                <input type="submit" />
+                <input type="submit" value="sign me up!"/>
             </form>
         </div>
             <footer class="footer">
