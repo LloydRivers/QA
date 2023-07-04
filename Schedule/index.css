@@ -67,11 +67,6 @@ img {
   border-top: 1px solid #ccc;
 }
 
-.signupForm {
-  display: flex;
-  flex-direction: column;
-}
-
 .error {
   border: 2px solid red;
 }
