@@ -5,85 +5,89 @@
         <meta name="viewport" content="width=nav, initial-scale=1.0">
         <link rel="stylesheet" href="index.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins"
+            rel="stylesheet"
+        />
         <title>QA Cinema Schedule</title>
     </head>
 
     <body>
         <div class="content">
 
-        <nav class="navbar">
-            <ul class="nav">
-              <li>QA</li>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="schedule.html">Schedule</a></li>
-              <li><a href="signUp.html">Signup</a></li>
-            </ul>
-          </nav>
+            <nav class="navbar">
+                <ul class="nav">
+                    <li>QA</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="schedule.html">Schedule</a></li>
+                    <li><a href="signUp.html">Signup</a></li>
+                </ul>
+            </nav>
 
-        <div style="text-align: center;">
-            <!-- <img src="images/cinemaStage.jpeg" alt="Front Stage of a Cinema" style="height: auto; width: fit-content;"> -->
-            <img
-                src="https://static.vecteezy.com/system/resources/previews/016/263/215/non_2x/movie-theater-cinema-hall-with-wide-screen-seats-free-vector.jpg"
-                alt=""
-            />
-        </div>
+            <div class="box" style="text-align: center;">
+                <!-- <img src="images/cinemaStage.jpeg" alt="Front Stage of a Cinema" style="height: auto; width: fit-content;"> -->
+                <img
+                    src="https://static.vecteezy.com/system/resources/previews/016/263/215/non_2x/movie-theater-cinema-hall-with-wide-screen-seats-free-vector.jpg"
+                    alt=""
+                />
+            </div>
+            <div class="box">
+                <table class="table table-bordered">
+                    <legend>QA Cinema Opening Times</legend>
+                    <thead class="table-light">
+                        <tr>
+                            <th>
+                                Days
+                            </th>
+                            <th>
+                                Opening - Closing Times
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Monday - Thursday</td>
+                        <td>09:00 - 23:00</td>
+                    </tr>
+                    <tr>
+                        <td>Friday - Saturday</td>
+                        <td>09:00 - 22:30</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>10:00 - 22:00</td>
+                    </tr>
+                </table>
+                <h1><strong>What's on</strong></h1>
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Movie Title</th>
+                            <th colspan="2">Time</th>
+                        </tr>
+                    </thead>
+                    
+                    <tr>
+                        <td>Spider-Man: Across The Spiderverse</td>
+                        <td>09:30, 12:00, 14:00, 17:00</td>
+                        <td><a href="images/spiderman.jpeg" target="_blank"><img src="images/spiderman.jpeg" alt="Spiderman Promo" style="height: 200px; width:150px;"></a></td> 
+                        
+                    </tr>
+                    <tr>
+                        <td>The Flash</td>
+                        <td>09:30, 12:00, 14:00, 17:00</td>
+                        <td><a href="images/theflash.jpg"><img src="images/theflash.jpg" alt="The Flash Promo" style="height: 200px; width:150px;"></a></td>
+                    </tr>
 
-        <table class="table table-bordered">
-            <legend>QA Cinema Opening Times</legend>
-            <thead class="table-light">
-                <tr>
-                    <th>
-                        Days
-                    </th>
-                    <th>
-                        Opening - Closing Times
-                    </th>
-                </tr>
-            </thead>
-            <tr>
-                <td>Monday - Thursday</td>
-                <td>09:00 - 23:00</td>
-            </tr>
-            <tr>
-                <td>Friday - Saturday</td>
-                <td>09:00 - 22:30</td>
-            </tr>
-            <tr>
-                <td>Sunday</td>
-                <td>10:00 - 22:00</td>
-            </tr>
-        </table>
-        <h1><strong>What's on</strong></h1>
-        <table class="table table-bordered">
-            <thead class="table-light">
-                <tr>
-                    <th>Movie Title</th>
-                    <th colspan="2">Time</th>
-                </tr>
-            </thead>
+                </table>
+            </div>
+            </div>
+                <footer class="footer">
+                    <p>&copy; Copyright QA Cinemas 2023</p>
+                </footer>
+            </div>
+
             
-            <tr>
-                <td>Spider-Man: Across The Spiderverse</td>
-                <td>09:30, 12:00, 14:00, 17:00</td>
-                <td><a href="images/spiderman.jpeg" target="_blank"><img src="images/spiderman.jpeg" alt="Spiderman Promo" style="height: 200px; width:150px;"></a></td> 
-                
-            </tr>
-            <tr>
-                <td>The Flash</td>
-                <td>09:30, 12:00, 14:00, 17:00</td>
-                <td><a href="images/theflash.jpg"><img src="images/theflash.jpg" alt="The Flash Promo" style="height: 200px; width:150px;"></a></td>
-            </tr>
-
-        </table>
-
         </div>
-            <footer class="footer">
-                <p>&copy; Copyright QA Cinemas 2023</p>
-            </footer>
-        </div>
-
-            
-    </div>
     </body>
 
 </html>
