@@ -5,6 +5,11 @@
   padding: 2rem;
 }
 
+body {
+  font-family: "Poppins";
+  font-size: 22px;
+}
+
 .navbar {
   background-color: #f2f2f2;
   padding-left: 0;
@@ -21,12 +26,15 @@
   cursor: pointer;
   margin-right: 10px;
 }
+.nav li a {
+  text-decoration: none;
+}
 
 .nav li:first-child {
   margin-left: 0;
 }
 
-.nav li:hover {
+.nav li a.active {
   color: red;
 }
 
@@ -40,17 +48,16 @@
   background-color: #f2f2f2;
   border: 1px solid #ccc;
 }
+img {
+  width: 100%;
+  max-height: 300px;
+  padding: 0;
+}
 
 .grid-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  padding: 0;
 }
 
 .footer {
@@ -71,4 +78,14 @@ img {
 
 .errorMsg {
   color: red;
+}
+@media (max-width: 768px) {
+  * {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 500px) {
+  * {
+    padding: 1rem;
+  }
 }

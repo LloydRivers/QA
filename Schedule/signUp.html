@@ -1,77 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=nav, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>
-        Sign Up
-    </title>
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=nav, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>QA Signup</title>
+  </head>
+
 <body>
     <div class="content">
         <nav class="navbar">
             <ul class="nav">
-                <li>QA</li>
-                <li><a href="index.html">Home</a></li>
-                <li>Schedule</li>
-                <li><a href="signUp.html">Signup</a></li>
+              <li>QA</li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="schedule.html">Schedule</a></li>
+              <li><a class="active" href="signUp.html">Signup</a></li>
             </ul>
-        </nav>
-        <div class="box" >
+          </nav>
+        <div class="box">
             <img
-            src="https://images.unsplash.com/photo-1627133805103-ce2d34ccdd37?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            alt=""
-          />
-
-        </div>
+              src="https://static.vecteezy.com/system/resources/previews/016/263/215/non_2x/movie-theater-cinema-hall-with-wide-screen-seats-free-vector.jpg"
+              alt=""
+            />
+          </div>
         <div class="box">
 
             <form class="signupForm">
-                <div>
+                <div class="form-group">
                     <label for="title">Title * </label>
-                    <select name="title" required>
+                    <select name="title" class="form-control" required>
                         <option>Mr</option>
                         <option>Mrs</option>
                         <option>Ms</option>
                         <option>Miss</option>
                     </select>
                 </div>
-                <div id="firstNameSection">
+                <div id="firstNameSection" class="form-group">
                     <label for="firstName">First Name * </label>
                     <input type="text" 
-                    id= "firstName" name="firstName" required onblur="validateFirstName()"/>
+                    id= "firstName" name="firstName" required onblur="validateFirstName()" class="form-control"/>
                 </div>
-                <div id="lastNameSection">
+                <div id="lastNameSection" class="form-group">
                     <label for="lastName">Last Name * </label>
-                    <input type="text" name="lastName" 
+                    <input 
+                    type="text" 
+                    name="lastName" 
                     id="lastName"
                     onBlur="validateLastName()"
+                    class="form-control"
                     required />
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="email">Email * </label>
-                    <input type="email" name="email" required/>
+                    <input 
+                    type="email" 
+                    name="email" 
+                    class="form-control" 
+                    required/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="dob">Date of Birth </label>
-                    <input type="date" name="dob" />
+                    <input 
+                    type="date" 
+                    name="dob"
+                    class="form-control" />
                 </div>
-                <div>
-                    <label for="tel">Phone Number </label>
-                    <input type="tel" name="tel" />
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" class="form-control" id="phoneNumber" />
+                      </div>
+                      <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gender"
+                            id="male"
+                            value="Male"
+                          />
+                          <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="gender"
+                            id="female"
+                            value="Female"
+                          />
+                          <label class="form-check-label" for="female">Female</label>
+                        </div>
+                      </div>
                 </div>
-                <div>
-                    <div>
-                        <input type="radio" value="male" name="gender" />
-                        <label for="male">Male</label>
-                    </div>
-                    <div>
-                        <input type="radio" value="female" name="gender" />
-                        <label for="female">Female</label>
-                    </div>
-                </div>
-                <input type="submit" value="sign me up!"/>
+                <button type="submit" class="btn btn-primary">sign me up!</button>
             </form>
         </div>
             <footer class="footer">
@@ -119,4 +150,5 @@
         }
             
     </script>
+    <script src="index.js"></script>
     </html>
